@@ -7,7 +7,6 @@ urlpatterns = [
     path('api/', include('trips.urls')),
     path('api/', include('itinerary.urls')), 
     path('api/', include('budget.urls')), 
-    
-    # Add the final app!
     path('api/', include('checklists.urls')), 
+    path('api/', include('notes.urls')), 
 ]
