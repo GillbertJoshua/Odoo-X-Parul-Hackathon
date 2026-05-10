@@ -3,8 +3,7 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
-from .views import RegisterView
-
+from .views import *
 urlpatterns = [
     # Registration Endpoint
     path('register/', RegisterView.as_view(), name='auth_register'),
@@ -14,4 +13,7 @@ urlpatterns = [
     
     # Refresh Token Endpoint
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # New endpoint for the frontend to get user data!
+    path('me/', UserDetailView.as_view(), name='user_detail'),
 ]

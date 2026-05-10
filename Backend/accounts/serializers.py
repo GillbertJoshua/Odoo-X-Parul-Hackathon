@@ -29,3 +29,23 @@ class RegisterSerializer(serializers.ModelSerializer):
             last_name=validated_data.get('last_name', '')
         )
         return user
+    
+
+# Login Page
+
+from .models import UserProfile # Add this import at the top
+
+# ... (Keep your RegisterSerializer up here) ...
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProfile
+        fields = ('profile_photo', 'language_preference')
+
+class UserSerializer(serializers.ModelSerializer):
+    # This nests the profile data inside the user data
+    profile = UserProfileSerializer(read_only=True)
+
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'first_name', 'last_name', 'profile')
