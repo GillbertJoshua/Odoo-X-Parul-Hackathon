@@ -30,10 +30,15 @@ INSTALLED_APPS = [
     # Third-party
     'rest_framework',
     'corsheaders',
+    'rest_framework_simplejwt',
 
-    # Local apps
-    'accounts',
-    'trips',
+    # Your Custom Traveloop Apps
+    'accounts',    # Handles Users & Auth
+    'trips',       # Handles the core Trip model
+    'itinerary',   # Handles Stops & Activities
+    'budget',      # Handles Expenses
+    'checklists',  # Handles Packing Lists
+    'notes',       # Handles Journals
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
