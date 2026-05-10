@@ -4,10 +4,10 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/auth/', include('accounts.urls')), 
-    
-    # Uncomment this line!
     path('api/', include('trips.urls')),
+    path('api/', include('itinerary.urls')), 
+    path('api/', include('budget.urls')), 
     
-    path('api/', include('itinerary.urls')),
-    # path('api/budget/', include('budget.urls')),
+    # Add the final app!
+    path('api/', include('checklists.urls')), 
 ]
